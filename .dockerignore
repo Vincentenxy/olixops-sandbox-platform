@@ -1,0 +1,39 @@
+# ---- 版本控制 ----
+.git/
+.gitignore
+.dockerignore
+
+# ---- 编译产物 ----
+bin/
+server
+
+# ---- 测试与覆盖率 ----
+*.test
+*.out
+coverage/
+
+# ---- 依赖缓存（镜像内重新下载，避免上下文膨胀） ----
+vendor/
+
+# ---- swaggo 生成文档 ----
+docs/
+
+# ---- IDE ----
+.idea/
+.vscode/
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+
+# ---- 文档与设计（运行镜像不需要） ----
+*.md
+design/
+
+# ---- 日志与临时文件 ----
+*.log
+tmp/
+.local
+web/node_modules
+web/dist
+.playwright-mcp

@@ -1,0 +1,18 @@
+# Example only. Apply in the verified sandbox Namespace; bind the backend ServiceAccount.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: olixops-workspace-reader-provisioner
+  namespace: opensandbox
+rules:
+  - apiGroups: [""]
+    resources: [persistentvolumeclaims]
+    verbs: [get, create]
+  - apiGroups: [""]
+    resources: [pods]
+    verbs: [list]
+  - apiGroups: [sandbox.opensandbox.io]
+    resources: [batchsandboxes]
+    verbs: [list]
+# RoleBinding must reference the actual backend ServiceAccount and its namespace.
+# No PV writes, Secret access, Pod exec or PVC deletion required in phase 1.

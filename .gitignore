@@ -1,0 +1,45 @@
+# ---- 编译产物 ----
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+server
+
+# ---- 测试与覆盖率 ----
+*.test
+*.out
+coverage/
+
+# ---- 依赖与工作区 ----
+vendor/
+go.work
+go.work.sum
+
+# ---- swaggo 生成文档 ----
+docs/
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+
+# ---- 日志与临时文件 ----
+*.log
+tmp/
+
+# Local credentials and web output
+.local/
+.env
+.env.*
+!.env.example
+web/node_modules/
+web/dist/
+playwright-report/

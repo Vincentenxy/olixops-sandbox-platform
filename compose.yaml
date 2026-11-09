@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: olixops-platform-dev-db
+    environment:
+      POSTGRES_USER: olixops
+      POSTGRES_PASSWORD: olixops-local
+      POSTGRES_DB: olixops
+    ports: ["127.0.0.1:15439:5432"]
+    volumes: ["platform-db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U olixops -d olixops"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  platform-db:

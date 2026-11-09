@@ -1,0 +1,38 @@
+server:
+  host: 127.0.0.1
+  port: 18090
+  mode: debug
+app:
+  name: olixops-agent-platform
+  version: 0.1.0
+auth:
+  jwt-public-key: "" # AUTH_JWT_PUBLIC_KEY；开发密钥由 scripts/dev-auth.go 生成
+  issuer: olixops-local
+  audience: olixops-agent-platform
+  local:
+    enabled: true
+    private-key-file: .local/jwt-private.pem
+    ttl-seconds: 28800
+    bootstrap-user: vincent
+    bootstrap-password: "" # AUTH_LOCAL_BOOTSTRAP_PASSWORD，由开发脚本从本机文件加载
+  admins: [] # 平台管理员 staffuserid；不接受请求传入的角色
+database:
+  dsn: "postgres://olixops:olixops-local@127.0.0.1:15439/olixops?sslmode=disable"
+  migrate: true # 已有生产库建议通过迁移任务执行 SQL 后关闭
+sandbox:
+  base-url: "http://efficient-lab.qiuer.net/osb"
+  api-key: "" # SANDBOX_API_KEY；不写入源码
+  images: ["python:3.12"] # 服务端镜像白名单，按实际可拉取的镜像修改
+  max-ttl: 86400
+  default-quota: 5
+
+workspace:
+  enabled: true
+  kubeconfig: /Users/vincent/.kube/config # 本地显式文件；集群部署置空使用专用 ServiceAccount
+  context: poc-cluster
+  cluster-id: poc-cluster
+  namespace: opensandbox # Kubernetes ns，和用户逻辑 Namespace 无关
+  storage-class: local-path
+  size-bytes: 10737418240 # 10Gi，local-path 不提供容量硬限制
+  project-quota: 5
+  project-bytes: 53687091200 # 50Gi 申请量
