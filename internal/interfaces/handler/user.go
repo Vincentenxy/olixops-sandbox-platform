@@ -3,8 +3,8 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 
-	"olixops-agent-platform/pkg/response"
-	"olixops-agent-platform/pkg/userctx"
+	"olixops-sandbox-platform/pkg/response"
+	"olixops-sandbox-platform/pkg/userctx"
 )
 
 // UserHandler 用户相关处理器（当前仅提供认证信息验证接口，后续业务开发时扩展）

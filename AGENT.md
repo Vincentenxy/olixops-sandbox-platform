@@ -1,4 +1,4 @@
-# olixops-agent-platform 项目开发规范
+# olixops-sandbox-platform 项目开发规范
 
 > 本文件是本项目所有开发工作的**硬性规范**，任何代码变更（包括 AI 生成）必须严格遵循。后续开发前请先阅读本文件。
 
@@ -134,7 +134,7 @@ HTTP body：
 ## 附：当前项目结构基线
 
 ```
-olixops-agent-platform/
+olixops-sandbox-platform/
 ├── cmd/main.go                          # 入口
 ├── configs/config.yaml                  # 配置
 ├── design/database.md                   # 表结构设计文档（SQL 代码块格式）

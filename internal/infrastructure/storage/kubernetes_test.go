@@ -10,7 +10,7 @@ import (
 	"k8s.io/client-go/dynamic"
 	v1 "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/rest"
-	"olixops-agent-platform/internal/domain"
+	"olixops-sandbox-platform/internal/domain"
 )
 
 func TestPVCIdentityAndConsumerChecks(t *testing.T) {

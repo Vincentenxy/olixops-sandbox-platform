@@ -5,11 +5,11 @@ import (
 	"errors"
 	osb "github.com/alibaba/OpenSandbox/sdks/sandbox/go"
 	"go.uber.org/zap"
-	"olixops-agent-platform/internal/domain"
-	"olixops-agent-platform/internal/infrastructure/sandbox"
-	"olixops-agent-platform/internal/infrastructure/storage"
-	"olixops-agent-platform/internal/infrastructure/store"
-	"olixops-agent-platform/pkg/logger"
+	"olixops-sandbox-platform/internal/domain"
+	"olixops-sandbox-platform/internal/infrastructure/sandbox"
+	"olixops-sandbox-platform/internal/infrastructure/storage"
+	"olixops-sandbox-platform/internal/infrastructure/store"
+	"olixops-sandbox-platform/pkg/logger"
 	"sync"
 	"time"
 )
@@ -69,7 +69,7 @@ func (p *Platform) createRemote(ctx context.Context, b domain.Sandbox) (string, 
 		}
 		volumes = []osb.Volume{{Name: "workspace", PVC: &osb.PVC{ClaimName: w.PVCName}, MountPath: "/workspace"}}
 	}
-	info, e := p.Backend.Lifecycle.CreateSandbox(ctx, osb.CreateSandboxRequest{Volumes: volumes, Image: &osb.ImageSpec{URI: b.Image}, Entrypoint: []string{"/bin/sh", "-c", "sleep infinity"}, Timeout: &b.TTL, ResourceLimits: osb.ResourceLimits{"cpu": "1", "memory": "1Gi"}, Metadata: map[string]string{"platform": "olixops-agent-platform", "operationId": b.ID}})
+	info, e := p.Backend.Lifecycle.CreateSandbox(ctx, osb.CreateSandboxRequest{Volumes: volumes, Image: &osb.ImageSpec{URI: b.Image}, Entrypoint: []string{"/bin/sh", "-c", "sleep infinity"}, Timeout: &b.TTL, ResourceLimits: osb.ResourceLimits{"cpu": "1", "memory": "1Gi"}, Metadata: map[string]string{"platform": sandboxPlatformIdentity, "operationId": b.ID}})
 	// Timeouts can leave real resources behind. Unknown continues to occupy quota until reconciliation.
 	state := "Unknown"
 	backend := ""
@@ -94,7 +94,7 @@ func (p *Platform) SyncOne(ctx context.Context, b domain.Sandbox) error {
 		if time.Since(b.CreateAt) < 3*time.Minute {
 			return nil
 		}
-		page, e := p.Backend.Lifecycle.ListSandboxes(ctx, osb.ListOptions{Metadata: map[string]string{"platform": "olixops-agent-platform", "operationId": b.ID}, PageSize: 10})
+		page, e := p.Backend.Lifecycle.ListSandboxes(ctx, osb.ListOptions{Metadata: map[string]string{"platform": sandboxPlatformIdentity, "operationId": b.ID}, PageSize: 10})
 		if e != nil {
 			return e
 		}

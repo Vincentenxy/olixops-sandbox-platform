@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 
-	"olixops-agent-platform/pkg/logger"
+	"olixops-sandbox-platform/pkg/logger"
 )
 
 // RequestIDHeader HTTP 请求头中的 request-id key

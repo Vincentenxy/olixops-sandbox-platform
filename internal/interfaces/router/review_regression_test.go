@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"olixops-agent-platform/internal/application"
-	"olixops-agent-platform/internal/domain"
-	"olixops-agent-platform/internal/infrastructure/sandbox"
-	"olixops-agent-platform/internal/infrastructure/storage"
+	"olixops-sandbox-platform/internal/application"
+	"olixops-sandbox-platform/internal/domain"
+	"olixops-sandbox-platform/internal/infrastructure/sandbox"
+	"olixops-sandbox-platform/internal/infrastructure/storage"
 )
 
 type observedVolume struct {

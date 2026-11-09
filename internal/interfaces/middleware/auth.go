@@ -10,9 +10,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 
-	"olixops-agent-platform/pkg/logger"
-	"olixops-agent-platform/pkg/response"
-	"olixops-agent-platform/pkg/userctx"
+	"olixops-sandbox-platform/pkg/logger"
+	"olixops-sandbox-platform/pkg/response"
+	"olixops-sandbox-platform/pkg/userctx"
 
 	"go.uber.org/zap"
 )

@@ -35,7 +35,7 @@ CLI 为幂等创建，已有账号不修改原密码；可在项目成员页把 
 ```yaml
 auth:
   issuer: olixops-local
-  audience: olixops-agent-platform
+  audience: olixops-agent-platform # 保留已有认证标识，与项目展示名称独立
   local:
     enabled: true
     private-key-file: .local/jwt-private.pem

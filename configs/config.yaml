@@ -3,11 +3,12 @@ server:
   port: 18090
   mode: debug
 app:
-  name: olixops-agent-platform
+  name: olixops-sandbox-platform
   version: 0.1.0
 auth:
   jwt-public-key: "" # AUTH_JWT_PUBLIC_KEY；开发密钥由 scripts/dev-auth.go 生成
   issuer: olixops-local
+  # 稳定的认证标识，项目改名后保留，兼容已有令牌。
   audience: olixops-agent-platform
   local:
     enabled: true

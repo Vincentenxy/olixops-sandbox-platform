@@ -2,7 +2,7 @@
 
 ## 范围与结论
 
-审核对象为 `olixops-agent-platform` 当前全部源码：Go 后端、本地认证、项目授权、OpenSandbox 代理、持久化工作区、对话关联、PostgreSQL SQL 和 Vue 前端。
+审核对象为 `olixops-sandbox-platform` 当前全部源码：Go 后端、本地认证、项目授权、OpenSandbox 代理、持久化工作区、对话关联、PostgreSQL SQL 和 Vue 前端。
 
 仓库尚无 Git 提交，不能用历史提交差异表示审核范围。本次按照项目 `AGENT.md`、已确认的工作区设计和 `design/workspace-phase1.md` 审核当前工作目录。规范与需求分别进行独立只读审查，主审负责修复和执行验证；修复后再次独立复审。
 

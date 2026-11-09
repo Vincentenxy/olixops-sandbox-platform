@@ -1,4 +1,4 @@
-module olixops-agent-platform
+module olixops-sandbox-platform
 
 go 1.26.0
 

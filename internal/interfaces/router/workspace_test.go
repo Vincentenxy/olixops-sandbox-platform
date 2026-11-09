@@ -16,14 +16,14 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"olixops-agent-platform/internal/application"
-	"olixops-agent-platform/internal/domain"
-	"olixops-agent-platform/internal/infrastructure/config"
-	"olixops-agent-platform/internal/infrastructure/sandbox"
-	"olixops-agent-platform/internal/infrastructure/storage"
-	"olixops-agent-platform/internal/infrastructure/store"
-	"olixops-agent-platform/internal/interfaces/router"
-	"olixops-agent-platform/pkg/logger"
+	"olixops-sandbox-platform/internal/application"
+	"olixops-sandbox-platform/internal/domain"
+	"olixops-sandbox-platform/internal/infrastructure/config"
+	"olixops-sandbox-platform/internal/infrastructure/sandbox"
+	"olixops-sandbox-platform/internal/infrastructure/storage"
+	"olixops-sandbox-platform/internal/infrastructure/store"
+	"olixops-sandbox-platform/internal/interfaces/router"
+	"olixops-sandbox-platform/pkg/logger"
 )
 
 type fakeVolumes struct {

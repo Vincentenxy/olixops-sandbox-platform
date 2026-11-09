@@ -63,7 +63,7 @@
 重启当前验收环境（仅本地）：
 
 ```bash
-cd /Users/vincent/Desktop/codes.nosync/olixops-agent-platform/olixops-agent-platform
+cd /Users/vincent/Desktop/codes.nosync/olixops-sandbox-platform
 # 数据库已运行则跳过这一条；不注册系统自动启动服务。
 /opt/homebrew/opt/postgresql@16/bin/pg_ctl -D .local/phase2-pg -l .local/phase2-pg.log -o '-h 127.0.0.1 -p 15441' start
 DATABASE_DSN='postgres://vincent@127.0.0.1:15441/olixops_phase2?sslmode=disable' ./scripts/dev.sh

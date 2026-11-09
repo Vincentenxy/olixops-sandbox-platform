@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "OlixOps Agent Platform",
+    "title": "OlixOps Sandbox Platform",
     "version": "0.1.0",
     "description": "GET/POST，统一 code/msg/data。支持用户逻辑 Namespace、PVC 工作区、外部对话关联、可恢复准备任务与固定执行上下文。OIDC 和聊天消息托管尚未实现。"
   },

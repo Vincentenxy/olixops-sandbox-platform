@@ -8,7 +8,7 @@ import (
 	"errors"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"olixops-agent-platform/internal/domain"
+	"olixops-sandbox-platform/internal/domain"
 )
 
 //go:embed schema.sql

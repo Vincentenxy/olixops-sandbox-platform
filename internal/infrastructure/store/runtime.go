@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5"
-	"olixops-agent-platform/internal/domain"
+	"olixops-sandbox-platform/internal/domain"
 )
 
 var ErrLeaseLost = errors.New("preparation lease is no longer current")

@@ -10,18 +10,18 @@ import (
 	"syscall"
 	"time"
 
-	"olixops-agent-platform/internal/application"
-	"olixops-agent-platform/internal/infrastructure/config"
-	"olixops-agent-platform/internal/infrastructure/sandbox"
-	"olixops-agent-platform/internal/infrastructure/storage"
-	"olixops-agent-platform/internal/infrastructure/store"
-	"olixops-agent-platform/internal/interfaces/router"
-	"olixops-agent-platform/pkg/logger"
+	"olixops-sandbox-platform/internal/application"
+	"olixops-sandbox-platform/internal/infrastructure/config"
+	"olixops-sandbox-platform/internal/infrastructure/sandbox"
+	"olixops-sandbox-platform/internal/infrastructure/storage"
+	"olixops-sandbox-platform/internal/infrastructure/store"
+	"olixops-sandbox-platform/internal/interfaces/router"
+	"olixops-sandbox-platform/pkg/logger"
 
 	"go.uber.org/zap"
 )
 
-// @title OlixOps Agent Platform API
+// @title OlixOps Sandbox Platform API
 // @version 0.1.0
 // @description 项目授权的 OpenSandbox 管理 API
 // @securityDefinitions.apikey BearerAuth

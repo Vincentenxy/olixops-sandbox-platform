@@ -12,7 +12,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"olixops-agent-platform/pkg/userctx"
+	"olixops-sandbox-platform/pkg/userctx"
 )
 
 func TestAuthKeepsCookieOnlyInInternalUserContext(t *testing.T) {

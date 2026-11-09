@@ -2,7 +2,7 @@ package application
 
 import (
 	"context"
-	"olixops-agent-platform/internal/domain"
+	"olixops-sandbox-platform/internal/domain"
 	"time"
 )
 

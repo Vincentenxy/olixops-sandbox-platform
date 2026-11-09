@@ -10,9 +10,9 @@ import (
 	osb "github.com/alibaba/OpenSandbox/sdks/sandbox/go"
 	"github.com/jackc/pgx/v5"
 	"go.uber.org/zap"
-	"olixops-agent-platform/internal/domain"
-	"olixops-agent-platform/internal/infrastructure/store"
-	"olixops-agent-platform/pkg/logger"
+	"olixops-sandbox-platform/internal/domain"
+	"olixops-sandbox-platform/internal/infrastructure/store"
+	"olixops-sandbox-platform/pkg/logger"
 )
 
 func (p *Platform) actorIsAdmin(actor string) bool {
@@ -164,7 +164,7 @@ func (p *Platform) prepareRun(ctx context.Context, r domain.RunContext) (string,
 		}
 	}
 	if b.BackendID == "" {
-		page, err := p.Backend.Lifecycle.ListSandboxes(ctx, osb.ListOptions{Metadata: map[string]string{"platform": "olixops-agent-platform", "operationId": b.ID}, PageSize: 10})
+		page, err := p.Backend.Lifecycle.ListSandboxes(ctx, osb.ListOptions{Metadata: map[string]string{"platform": sandboxPlatformIdentity, "operationId": b.ID}, PageSize: 10})
 		if err != nil || len(page.Items) != 1 {
 			return "Waiting", "create_unknown", "尚未找到唯一的远端创建结果；保留占用并继续核对"
 		}

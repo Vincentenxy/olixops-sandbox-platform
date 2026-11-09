@@ -1,6 +1,6 @@
 # PVC 持久化工作区设计与开发方案
 
-日期：2026-11-04。状态：设计已确认；第一阶段已实现，范围见 [交付说明](workspace-phase1.md)。适用项目：OlixOps Agent Platform。
+日期：2026-11-04。状态：设计已确认；第一阶段已实现，范围见 [交付说明](workspace-phase1.md)。适用项目：OlixOps Sandbox Platform。
 
 补充阅读：[用户、对话与工作区产品草案](workspace-product-draft.md) 和 [成熟产品调研](workspace-market-research.md)。产品草案补充了对话引用、归档、长期保留和执行上下文规则；需用户确认后再开发。闲置、停止和归档不触发自动删除，7 天保留仅针对主动进入回收站的数据。
 

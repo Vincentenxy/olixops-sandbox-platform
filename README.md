@@ -1,8 +1,12 @@
-# OlixOps Agent Platform
+# OlixOps Sandbox Platform
 
-基于 OpenSandbox 的内部 AI 沙箱管理平台。Go + Gin 后端，Vue 3 + TypeScript 控制台，PostgreSQL 持久化。
+基于 OpenSandbox 的内部沙箱管理平台，为本地 AI 开发提供受控的执行环境。Go + Gin 后端，Vue 3 + TypeScript 控制台，PostgreSQL 持久化。
 
 项目参考 `/Users/vincent/Downloads/env-vault.zip` 的分层、JWT 公钥验签、统一响应、配置和日志模块；不包含参考仓库的 Git 历史、示例公钥和运行凭据。
+
+前后端采用同一仓库：Go 后端位于 `cmd/`、`internal/`，Vue 前端位于 `web/`，独立构建和部署。
+
+项目改名后，JWT audience 与沙箱 metadata 的平台标识继续使用 `olixops-agent-platform`，以兼容已有令牌和远端资源查询；它们是稳定的内部标识，不跟随展示名称变更。
 
 ## 当前可运行范围
 
@@ -28,7 +32,7 @@ PVC 持久化工作区的设计提案见 [场景、状态与开发方案](design
 要求 Docker Compose、Node.js 22.12+（或 20.19+）、Go 1.26。项目沿用参考工程的 Go 版本，支持 Go 自动下载工具链。
 
 ```bash
-cd /Users/vincent/Desktop/codes.nosync/olixops-agent-platform/olixops-agent-platform
+cd /Users/vincent/Desktop/codes.nosync/olixops-sandbox-platform
 # 仅首次启动数据库；固定绑定本地 15439，使用独立命名卷
 docker compose up -d postgres
 # 生成本地 RSA 签名密钥（启动脚本也会在缺失时自动生成）
@@ -42,7 +46,7 @@ env -u GOROOT go run ./scripts/dev-auth.go
 另开一个终端启动前端：
 
 ```bash
-cd /Users/vincent/Desktop/codes.nosync/olixops-agent-platform/olixops-agent-platform
+cd /Users/vincent/Desktop/codes.nosync/olixops-sandbox-platform
 npm ci --prefix web
 npm run dev --prefix web
 ```

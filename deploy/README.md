@@ -1,6 +1,6 @@
 # Kubernetes 部署准备
 
-本轮不执行发布。先构建后端 Dockerfile 与 web/Dockerfile。web Nginx 通过集群 Service `olixops-agent-platform:18090` 转发 `/api/`。前端使用根路径，不复用 OpenSandbox `/osb` 前缀。
+本轮不执行发布。先构建后端 Dockerfile 与 web/Dockerfile。web Nginx 通过集群 Service `olixops-sandbox-platform:18090` 转发 `/api/`。前端使用根路径，不复用 OpenSandbox `/osb` 前缀。
 
 后端 Deployment 挂载 configs/config.yaml 或通过环境变量覆盖；`SERVER_HOST=0.0.0.0`。公司 JWT 公钥、Server API Key 与数据库连接应按公司配置/Secret 方案注入，不写入镜像。 readiness/liveness 可使用 `/api/v1/pub/health`（当前仅进程存活检查，不表示 OpenSandbox 可用）。
 

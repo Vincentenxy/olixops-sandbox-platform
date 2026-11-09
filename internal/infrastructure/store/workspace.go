@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/jackc/pgx/v5"
-	"olixops-agent-platform/internal/domain"
+	"olixops-sandbox-platform/internal/domain"
 )
 
 func (s *Store) Namespace(ctx context.Context, owner string) (domain.Namespace, error) {

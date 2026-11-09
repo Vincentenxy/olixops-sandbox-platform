@@ -3,7 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 
-	"olixops-agent-platform/pkg/response"
+	"olixops-sandbox-platform/pkg/response"
 )
 
 // HealthHandler 健康检查处理器

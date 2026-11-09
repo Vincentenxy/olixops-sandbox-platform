@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"olixops-agent-platform/internal/domain"
-	"olixops-agent-platform/pkg/response"
+	"olixops-sandbox-platform/internal/domain"
+	"olixops-sandbox-platform/pkg/response"
 )
 
 // ContinueConversation godoc
